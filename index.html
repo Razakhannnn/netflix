@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./net icon.png" type="image/x-icon">
+    <title>Netflix</title>
+
+    <style>
+        .raza {
+            /* height: 10vh; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 14%;
+
+        }
+
+        .btn {
+            padding: 8px;
+            padding-bottom: 8px;
+            padding-left: 20px;
+            padding-right: 20px;
+            background-color: #e50914;
+            color: white;
+            border-radius: 5px 10px 5px 9%;
+            cursor: pointer;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Popins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+        }
+
+        .nav {
+            width: 100%;
+            height: 100vh;
+            background-image: url(pic.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+        }
+
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            margin: 100px;
+        }
+
+        .header-content h1 {
+            font-size: 50px;
+            line-height: 60px;
+            font-weight: 600;
+            max-width: 600px;
+        }
+
+        .header-content h3 {
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .email-signup {
+            background: #fff;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+
+        .email-signup input {
+            flex: 1;
+            border: 0;
+            outline: 0;
+            margin-left: 20px;
+        }
+
+        .email-signup button {
+            background: #db0001;
+            border: 0;
+            outline: 0;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 15px 30px;
+        }
+
+        .features {
+            padding: 50px 12%;
+            font-size: 22px;
+        }
+
+        .row {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 50px 0;
+        }
+
+        .text-col {
+            flex-basis: 50%;
+            margin-bottom: 20px;
+        }
+
+        .img-col {
+            flex-basis: 50%;
+            margin-bottom: 20px;
+        }
+
+        .img-col img {
+            display: block;
+            width: 90%;
+            margin: auto;
+
+        }
+
+        .features h2 {
+            font-size: 50px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* ---------faq-------- */
+        .faq {
+            padding: 10px 12%;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .faq h2 {
+            font-weight: 500;
+            font-size: 40px;
+        }
+        .according{
+            text-align: -webkit-center;
+        }
+        .according li{
+            list-style: none;
+            width: 102vh;
+            padding: 5px;
+         
+        }
+        .according li label{
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            background: #404040;
+            margin-bottom: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+        label::after{
+            content: '+';
+            font-size: 34px;
+            position: absolute;
+            right: 20px;
+            transition: transform 5s;
+        }
+        input[type="radio"]{
+            display: none;
+        }
+        .according .content{
+           background: #303030;
+           text-align: left;
+           padding: 0 20px;
+           max-height: 0;
+           overflow: hidden;
+           transition: max-height 0.5s, padding 0.5s;
+        }
+        .according input[type="radio"]:checked + label + .content {
+            max-height: 700px;
+            padding: 20px 14px;
+        }
+        .according input[type="radio"]:checked + label ::after{
+            transform: rotate(135deg);
+        }
+        .faq .email-signup{
+            max-width: 600px;
+            margin: 20px auto 60px;
+        }
+        .faq small{
+            font-size: 2vh;
+        }
+        /* -------footer---- */
+        .footer{
+            padding: 50px 15% 10px;
+            border-top: 6px solid #585656;
+            color: #777;
+        }
+        .footer h2{
+            font-size: 4vh;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        .footer .col{
+            flex-basis: 25%;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+        .footer .col a{
+            display: block;
+            text-decoration: none;
+            color: #716868;
+            font-size: 2vmin;
+            margin-bottom: 2vmin;
+        }
+        .footer .row{
+            align-items: flex-start;
+            padding: 10px 0;
+        }
+        .eng{
+            border: 0;
+            outline: 0;
+            background: #5a5959;
+            color: #0d0c0c;
+            padding: 7px 20px;
+            font-size: 2vh;
+             border-radius: 42px 20px;
+             margin-left: 10px;
+             cursor: pointer;
+        }
+     
+    </style>
+
+
+</head>
+
+
+<body>
+    <div class="nav">
+        <nav class="raza">
+            <img class="logo" src="./netflix-logo-history-32.png" alt="">
+            <button class="btn">Sign In</button>
+        </nav>
+    </div>
+    <div class="header-content">
+        <h1>Unlimited movies, TV shows, and more</h1>
+        <h3>Watch anywhere. Cancel anytime.</h3>
+        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+        <form class="email-signup">
+            <input type="email" placeholder="email address" required>
+            <button type="submit">get started</button>
+        </form>
+    </div>
+    <!-- 1    -->
+    <div class="features">
+        <div class="row">
+            <div class="text-col">
+                <h2>Enjoy on your TV</h2>
+                <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+            </div>
+            <div class="img-col">
+                <img src="./feature-1.png" alt="">
+            </div>
+        </div>
+        <!-- 2       -->
+        <div class="row">
+            <div class="img-col">
+                <img src="./feature-2.png" alt="">
+            </div>
+            <div class="text-col">
+                <h2>Download your shows to watch offline</h2>
+                <p>Save your favorites easily and always have something to watch.</p>
+            </div>
+        </div>
+        <!-- 3 -->
+        <div class="row">
+            <div class="img-col">
+                <img src="./feature-3.png" alt="">
+            </div>
+            <div class="text-col">
+                <h2>Watch everywhereV</h2>
+                <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+            </div>
+        </div>
+        <!-- 4           -->
+        <div class="row">
+            <div class="img-col">
+                <img src="./feature-4.png" alt="">
+            </div>
+            <div class="text-col">
+                <h2>Create profiles for kids</h2>
+                <p>Send kids on adventures with their favorite characters in a space made just for them—free with your
+                    membership.</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="according">
+
+            <ul >
+                <!--1  -->
+                <li><input type="radio" name="according" id="first">
+                    <label for="first">what is Netflix</label>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit rem numquam temporibus excepturi
+                            aspernatur facere? Quis ratione illum eius corrupti laudantium aut fuga voluptates harum dolorem
+                            exercitationem? Aliquam, ea enim.</p>
+                        </div>
+                    </li>
+                    <!-- 2 -->
+                    <li><input type="radio" name="according" id="sec">
+                        <label for="first">how much does netflix cost</label>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit rem numquam temporibus excepturi
+                                aspernatur facere? Quis ratione illum eius corrupti laudantium aut fuga voluptates harum dolorem
+                                exercitationem? Aliquam, ea enim.</p>
+                            </div>
+                        </li>
+                        <!-- 3 -->
+                        <li><input type="radio" name="according" id="thi">
+                            <label for="first">where can I watch</label>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit rem numquam temporibus excepturi
+                                    aspernatur facere? Quis ratione illum eius corrupti laudantium aut fuga voluptates harum dolorem
+                                    exercitationem? Aliquam, ea enim.</p>
+                                </div>
+                            </li>
+                            <!-- 4 -->
+                            <li><input type="radio" name="according" id="four">
+                                <label for="first">how do I Cancel</label>
+                                <div class="content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit rem numquam temporibus excepturi
+                                        aspernatur facere? Quis ratione illum eius corrupti laudantium aut fuga voluptates harum dolorem
+                                        exercitationem? Aliquam, ea enim.</p>
+                                    </div>
+                                </li>
+                                <!-- 5 -->
+                                <li><input type="radio" name="according" id="fiv">
+                                    <label for="first">what can I watch on netflix</label>
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit rem numquam temporibus excepturi
+                                            aspernatur facere? Quis ratione illum eius corrupti laudantium aut fuga voluptates harum dolorem
+                                            exercitationem? Aliquam, ea enim.</p>
+                                        </div>
+                                    </li>
+                                    <!-- 6 -->
+                                    <li><input type="radio" name="according" id="six">
+                                        <label for="first">is netflix is good for kid </label>
+                                        <div class="content">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit rem numquam temporibus excepturi
+                                                aspernatur facere? Quis ratione illum eius corrupti laudantium aut fuga voluptates harum dolorem
+                                                exercitationem? Aliquam, ea enim.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <small>Ready to watch? Enter your email to create or restart your membership.</small>
+                                    <form class="email-signup">
+                                        <input type="email" placeholder="email address" required>
+                                        <button type="submit">get started</button>
+                                    </form>
+                                </div>
+                                </div>
+                                <div class="footer">
+                                    <h2>Questions? Contact us.</h2>
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="#">faq</a>
+                                            <a href="#">Investor Relations</a>
+                                        <a href="#">Privacy</a>
+                                        <a href="#">Speed Test</a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="#">Help Center</a>
+                                            <a href="#">Jobs</a>
+                                        <a href="#">Cookie Preferences</a>
+                                        <a href="#">Legal Notices</a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="#">Account</a>
+                                            <a href="#">Ways to Watch</a>
+                                        <a href="#">Corporate Information</a>
+                                        <a href="#">Only on Netflix</a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="#">Media Center</a>
+                                            <a href="#">Terms of Use</a>
+                                            <a href="#">Contact Us</a>
+                                        <!-- <a href="#">Corporate Information</a> -->
+                                        </div>
+                                        <button class="eng">English <img src="./down-icon.png" alt=""></button>
+                                    </div>
+                                </div>
+                            </body>
+                            
+                            </html>
